@@ -8,8 +8,8 @@
 
 ## Features
 
-- [ ] aws vpc, subnets with styles
-- [ ] aws overlapping az on subnets
+- [x] aws vpc, subnets with styles
+- [x] aws overlapping az on subnets
 - [ ] dsl 2 py 2 diagrams (refer to d2)
 
 ## Reference
