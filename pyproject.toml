@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-diagrams = {path = "../diagrams/dist/diagrams-0.23.5a1-py3-none-any.whl"}
+diagrams = {path = "../diagrams/dist/diagrams-0.23.5a2-py3-none-any.whl"}
 
 
 [build-system]
