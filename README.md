@@ -10,19 +10,24 @@
 
 - [x] aws vpc, subnets with styles
 - [x] aws overlapping az on subnets
-- [ ] dsl 2 py 2 diagrams (refer to d2)
+  - calculate the position based on the number of az and subnets
+  - store and reuse the calculated position
+- [ ] aws grid subnets with az
+  - use 'anchor', a hidden node, to align the subnets
+- [ ] dsl investigate
+  - dsl 2 py 2 diagrams (refer to d2)
 
 ## Reference
 
-- [ ] <https://github.com/terrastruct/d2?tab=readme-ov-file#community-plugins>
+- <https://github.com/terrastruct/d2?tab=readme-ov-file#community-plugins>
 
-- [ ] read tfstate and generate graph
+- read tfstate and generate graph
   - <https://github.com/cycloidio/inframap>
   - <https://github.com/28mm/blast-radius>
 
-- [ ] read aws cli and generate graph
+- read aws cli and generate graph
   - <https://github.com/Cloud-Architects/cloudiscovery>
 
-- [ ] other terraform interesting tools
+- other terraform interesting tools
   - <https://github.com/cycloidio/terracost>
   - <https://pypi.org/project/python-hcl2/>

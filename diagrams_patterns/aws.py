@@ -1,8 +1,15 @@
 from diagrams import Cluster
 from diagrams.aws.general import Cloud, Account, Region
-from diagrams.aws.network import VPC, PrivateSubnet, PublicSubnet, SecureSubnet, IntraSubnet
+from diagrams.aws.network import (
+    VPC,
+    PrivateSubnet,
+    PublicSubnet,
+    SecureSubnet,
+    IntraSubnet,
+)
 
 # Cluster
+
 
 class VPCCluster(Cluster):
     _icon_node = VPC
@@ -16,7 +23,24 @@ class VPCCluster(Cluster):
         label: str = "vpc",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
+
+
+class AZCluster(Cluster):
+    _graph_attr = {
+        "bgcolor": "transparent",
+        "penwidth": "2.0",
+        "style": "rounded,dashed",
+    }
+
+    def __init__(
+        self,
+        label: str = "az",
+        direction: str = "LR",
+    ):
+        super().__init__(label, direction, graph_attr=self._graph_attr)
 
 
 class PublicSubnetCluster(Cluster):
@@ -31,7 +55,9 @@ class PublicSubnetCluster(Cluster):
         label: str = "public",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class PrivateSubnetCluster(Cluster):
@@ -46,7 +72,9 @@ class PrivateSubnetCluster(Cluster):
         label: str = "private",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class SecureSubnetCluster(Cluster):
@@ -61,7 +89,9 @@ class SecureSubnetCluster(Cluster):
         label: str = "secure",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class IntraSubnetCluster(Cluster):
@@ -76,7 +106,9 @@ class IntraSubnetCluster(Cluster):
         label: str = "intra",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class CloudCluster(Cluster):
@@ -91,7 +123,9 @@ class CloudCluster(Cluster):
         label: str = "cloud",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class AccountCluster(Cluster):
@@ -106,7 +140,9 @@ class AccountCluster(Cluster):
         label: str = "account",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
 
 
 class RegionCluster(Cluster):
@@ -118,4 +154,6 @@ class RegionCluster(Cluster):
         label: str = "region",
         direction: str = "LR",
     ):
-        super().__init__(label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr)
+        super().__init__(
+            label, direction, icon_node=self._icon_node, graph_attr=self._graph_attr
+        )
