@@ -12,8 +12,9 @@
 - [x] aws overlapping az on subnets
   - calculate the position based on the number of az and subnets
   - store and reuse the calculated position
-- [ ] aws grid subnets with az
-  - use 'anchor', a hidden node, to align the subnets
+- [x] aws grid subnets with az
+  - ~~use 'anchor', a hidden node, to align the subnets~~
+  - not really work
 - [ ] dsl investigate
   - dsl 2 py 2 diagrams (refer to d2)
 
