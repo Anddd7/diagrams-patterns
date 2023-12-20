@@ -7,6 +7,7 @@ from diagrams.aws.network import (
 )
 from diagrams.aws.database import RDSInstance
 from diagrams.aws.compute import EKS
+from diagrams.generic.blank import Blank
 from diagrams_patterns.aws import (
     SecureSubnetCluster,
     VPCCluster,
@@ -17,31 +18,39 @@ from diagrams_patterns.aws import (
     CloudCluster,
     AccountCluster,
 )
+
 from diagrams_patterns.neato_aws import PinedVPC
-from diagrams_patterns.neato import PinedCluster, getpinedpos, NEATO_STYLE_DiagramAttr
+from diagrams_patterns.neato import (
+    PinedCluster,
+    getpinedpos,
+    NEATO_STYLE_DiagramAttr,
+    getx,
+    gety,
+    PinedPosManager,
+)
 
 with Diagram("dist/poc_neato_overlap", show=False, graph_attr=NEATO_STYLE_DiagramAttr):
     pinedvpc = PinedVPC()
-    padding = 0.4
 
     with pinedvpc.getvpc():
-        igw = InternetGateway(pin="true", pos=f"{pinedvpc._width/2},{-2}")
+        igw = InternetGateway(
+            pin="true", pos=f"{getx(shfit=pinedvpc._width/2)},{gety(shfit=-2)}"
+        )
 
     with pinedvpc.getsubnet("1b", "public") as instance:
-        x, y, _, _ = getpinedpos(instance)
-        x, y = x + padding, y + padding
-        nat = NATGateway(pin="true", pos=f"{x},{y}")
-        elb = ElasticLoadBalancing(pin="true", pos=f"{x+2},{y}")
+        pos = PinedPosManager()
+        nat = NATGateway(pin="true", pos=pos.nextpos())
+        elb = ElasticLoadBalancing(pin="true", pos=pos.nextpos())
+        Blank(pin="true", pos=pos.nextpos())
+        ElasticLoadBalancing(pin="true", pos=pos.nextpos())
 
     with pinedvpc.getsubnet(1, 1) as instance:
-        x, y, _, _ = getpinedpos(instance)
-        x, y = x + padding, y + padding
-        eks = EKS(pin="true", pos=f"{x},{y}")
+        pos = PinedPosManager()
+        eks = EKS(pin="true", pos=pos.nextpos())
 
     with pinedvpc.getsubnet(1, "intra") as instance:
-        x, y, _, _ = getpinedpos(instance)
-        x, y = x + padding, y + padding
-        rds = RDSInstance(pin="true", pos=f"{x},{y}")
+        pos = PinedPosManager()
+        rds = RDSInstance(pin="true", pos=pos.nextpos())
 
     igw >> elb >> eks >> rds
     eks >> nat >> igw
