@@ -1,6 +1,6 @@
-from diagrams import Cluster
-from diagrams.aws.general import Cloud, Account, Region
-from diagrams.aws.network import (
+from diagrams_ext import Cluster
+from diagrams_ext.aws.general import Cloud, Account, Region
+from diagrams_ext.aws.network import (
     VPC,
     PrivateSubnet,
     PublicSubnet,

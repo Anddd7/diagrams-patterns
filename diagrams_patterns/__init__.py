@@ -1,5 +1,5 @@
 from typing import Dict
-from diagrams import Cluster, Diagram, Edge, Node
+from diagrams_ext import Cluster, Diagram, Edge, Node
 
 
 def HiddenPoint():
@@ -34,9 +34,10 @@ def peercluster(*args: Node, **attrs: Dict):
             - args[i + 1]
         )
 
+
 # draw an edge to connect nodes
 # patterns:
-# - penwidth="0", hide the edge and force nodes to re-order, e.g. wrap, align   
+# - penwidth="0", hide the edge and force nodes to re-order, e.g. wrap, align
 def peernodes(*args: Node, **attrs: Dict):
     if len(args) < 2:
         return

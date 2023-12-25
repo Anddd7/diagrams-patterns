@@ -1,20 +1,20 @@
-from diagrams import Cluster, Diagram, Node, Edge
+from diagrams_ext import Cluster, Diagram, Node, Edge
 
-from diagrams.generic.blank import Blank
-from diagrams.aws.network import (
+from diagrams_ext.generic.blank import Blank
+from diagrams_ext.aws.network import (
     NATGateway,
     InternetGateway,
     ElasticLoadBalancing,
     TransitGateway,
     VpnGateway,
 )
-from diagrams.aws.database import RDSInstance
-from diagrams.aws.compute import EKS
-from diagrams.aws.storage import S3
-from diagrams.aws.management import Organizations, Cloudtrail
-from diagrams.aws.security import SingleSignOn
-from diagrams.onprem.iac import Terraform
-from diagrams.saas.identity import Auth0, Okta
+from diagrams_ext.aws.database import RDSInstance
+from diagrams_ext.aws.compute import EKS
+from diagrams_ext.aws.storage import S3
+from diagrams_ext.aws.management import Organizations, Cloudtrail
+from diagrams_ext.aws.security import SingleSignOn
+from diagrams_ext.onprem.iac import Terraform
+from diagrams_ext.saas.identity import Auth0, Okta
 from diagrams_patterns.aws import *
 from diagrams_patterns import *
 

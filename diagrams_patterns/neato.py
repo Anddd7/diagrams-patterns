@@ -1,4 +1,4 @@
-from diagrams import Node, setcluster, getcluster, Cluster
+from diagrams_ext import Node, setcluster, getcluster, Cluster
 
 NEATO_STYLE_DiagramAttr = {"layout": "neato", "compound": "true", "splines": "spline"}
 

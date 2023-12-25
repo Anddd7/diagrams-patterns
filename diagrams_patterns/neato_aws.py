@@ -1,4 +1,4 @@
-from diagrams import Node, setcluster, Cluster
+from diagrams_ext import Node, setcluster, Cluster
 from diagrams_patterns.aws import (
     PublicSubnetCluster,
     PrivateSubnetCluster,

@@ -111,13 +111,14 @@ files = [
 ]
 
 [[package]]
-name = "diagrams"
-version = "0.23.5a3"
+name = "diagrams-ext"
+version = "0.23.5a4"
 description = "Diagram as Code"
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "diagrams-0.23.5a3-py3-none-any.whl", hash = "sha256:4b32185dec1cfb590ed3bfb65223767d2f9dd47b6f9d4f43082f03dcceacd36d"},
+    {file = "diagrams_ext-0.23.5a4-py3-none-any.whl", hash = "sha256:628e2e26b87bb9f3aa83da13f7a31014766375555559c0ae10c88fad2777f6ed"},
+    {file = "diagrams_ext-0.23.5a4.tar.gz", hash = "sha256:a04e20129adc103ccdc61f1ef11646c215d2de870ff25e6550115edb44e132ac"},
 ]
 
 [package.dependencies]
@@ -125,10 +126,6 @@ graphviz = ">=0.13.2,<0.21.0"
 jinja2 = ">=2.10,<4.0"
 requests = ">=2.31.0,<3.0.0"
 typed-ast = ">=1.5.4,<2.0.0"
-
-[package.source]
-type = "file"
-url = "../diagrams/dist/diagrams-0.23.5a3-py3-none-any.whl"
 
 [[package]]
 name = "graphviz"
@@ -333,4 +330,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e75bf7146e2db2247dcebeb7faab9115f6e5a5222dc8886c6c4d7f9dba90c069"
+content-hash = "edc219b20b7290e7a974a160fe4b5d8f74e2270b63b8d4ae717c9ccf5dbc993d"

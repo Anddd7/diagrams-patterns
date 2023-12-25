@@ -1,13 +1,13 @@
-from diagrams import Cluster, Diagram, Node
+from diagrams_ext import Cluster, Diagram, Node
 
-from diagrams.aws.network import (
+from diagrams_ext.aws.network import (
     NATGateway,
     InternetGateway,
     ElasticLoadBalancing,
 )
-from diagrams.aws.database import RDSInstance
-from diagrams.aws.compute import EKS
-from diagrams.generic.blank import Blank
+from diagrams_ext.aws.database import RDSInstance
+from diagrams_ext.aws.compute import EKS
+from diagrams_ext.generic.blank import Blank
 from diagrams_patterns.aws import (
     SecureSubnetCluster,
     VPCCluster,
