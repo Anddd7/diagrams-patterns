@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-diagrams-ext = "^0.23.5a4"
+diagrams-ext = "^0.23.5-alpha.4"
 
 
 [build-system]
